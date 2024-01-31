@@ -22,9 +22,9 @@ def select_label(train_y, val_y, test_y, label):
 
 
 def load_data(config):
-    with np.load('./data/train.npz') as train,\
-         np.load('./data/val.npz') as val,\
-         np.load('./data/test.npz') as test:
+    with np.load(f'./data/{config["split"]}/train.npz') as train,\
+         np.load(f'./data/{config["split"]}/val.npz') as val,\
+         np.load(f'./data/{config["split"]}/test.npz') as test:
         train_X, train_y = train['X'], train['y']
         val_X, val_y = val['X'], val['y']
         test_X, test_y = test['X'], test['y']

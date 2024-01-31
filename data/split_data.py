@@ -1,10 +1,11 @@
+import os
 import numpy as np
 import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 
-def main(oversample=True):
+def main(name='', oversample=True):
     with open('./data/data.pkl', 'rb') as f:
         raw = pickle.load(f)
 
@@ -52,8 +53,10 @@ def main(oversample=True):
     val_X, val_y = [d[0] for d in data_vl], [d[1:] for d in data_vl]
     test_X, test_y = [d[0] for d in data_te], [d[1:] for d in data_te]
 
-    np.savez('./data/train.npz', X=train_X, y=train_y)
-    np.savez('./data/val.npz', X=val_X, y=val_y)
-    np.savez('./data/test.npz', X=test_X, y=test_y)
+    os.makedirs(f'./data/{name}', exist_ok=True)
+
+    np.savez(f'./data/{name}/train.npz', X=train_X, y=train_y)
+    np.savez(f'./data/{name}/val.npz', X=val_X, y=val_y)
+    np.savez(f'./data/{name}/test.npz', X=test_X, y=test_y)
 
 main()
