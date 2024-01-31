@@ -47,7 +47,7 @@ def train_model():
             }, f'{save_dir}/model.pt')
             print('Model Saved\n')
 
-        return train_r2, best_r2
+    return train_r2, best_r2
 
 
 def save_results():
