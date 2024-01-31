@@ -4,3 +4,4 @@ checkpoints/
 convert/
 notes.md
 *.npz
+results.csv
