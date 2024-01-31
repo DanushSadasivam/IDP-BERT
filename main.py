@@ -53,11 +53,11 @@ def train_model():
 def save_results():
     if os.path.exists('results.csv'):
         with open('results.csv', 'a') as f:
-            f.write(f'{run_name}, , {train_r2}, {val_r2}, {test_r2}\n')
+            f.write(f'{run_name},{train_r2},{val_r2},{test_r2}\n')
     else:
         with open('results.csv', 'w') as f:
-            f.write('Run Name, , Train R2, Validation R2, Test R2\n')
-            f.write(f'{run_name}, , {train_r2}, {val_r2}, {test_r2}\n')
+            f.write('Run Name,Train R2,Validation R2,Test R2\n')
+            f.write(f'{run_name},{train_r2},{val_r2},{test_r2}\n')
 
 
 config = yaml.load(open('./config.yaml', 'r'), Loader=yaml.FullLoader)
