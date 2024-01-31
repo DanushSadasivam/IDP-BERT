@@ -1,7 +1,7 @@
 epochs: 100
 batch_size: 16
 label: cv   # cv, rog, tau
-name: 'baseline'
+name: 
 debug: false
 
 network:

@@ -1,4 +1,6 @@
 __pycache__/
 wandb/
 checkpoints/
+convert/
 notes.md
+*.npz
