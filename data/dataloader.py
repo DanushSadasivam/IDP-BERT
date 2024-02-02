@@ -71,7 +71,7 @@ def load_data(config):
     print('Test dataset samples: ', len(test_dataset))
 
     print('Train dataset batches: ', len(train_dataloader))
-    print('Validataion dataset batches: ', len(val_dataloader))
+    print('Validation dataset batches: ', len(val_dataloader))
     print('Test dataset batches: ', len(test_dataloader))
 
     print()
