@@ -68,7 +68,7 @@ model = create_model(config)
 criterion, optimizer, scheduler = setup_training(config, model)
 
 if not config['debug']:
-    run_name = f'{config["label"]}-{datetime.now().strftime("%m%d_%H%M")}'
+    run_name = f'{config["label"]}_{datetime.now().strftime("%m%d_%H%M")}'
     wandb.init(project='IDPBERT', name=run_name)
 
     save_dir = f'./checkpoints/{run_name}'
