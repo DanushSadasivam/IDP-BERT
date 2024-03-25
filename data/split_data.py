@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 
-def main(name='', oversample=True):
+def main(name='split0', oversample=True):
     with open('./data/data.pkl', 'rb') as f:
         raw = pickle.load(f)
 

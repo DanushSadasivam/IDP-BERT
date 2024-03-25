@@ -1,6 +1,6 @@
 epochs: 100
 batch_size: 16
-split: ''
+split: 'split0'
 label: cv   # cv, rog, tau
 name: 
 debug: false
