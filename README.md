@@ -1,5 +1,5 @@
 # IDP-BERT
-Property Prediction for Intrinsically Disordered Proteins (IDPs) using Language Model.
+Property Prediction for Intrinsically Disordered Proteins (IDPs) using Language Model. ([Paper](https://arxiv.org/abs/2403.19762))
 
 <br>
 
