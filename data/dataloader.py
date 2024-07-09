@@ -33,13 +33,13 @@ def load_data(config):
 
     tokenizer = BertTokenizerFast.from_pretrained('Rostlab/prot_bert_bfd', do_lower_case=False)
 
-    encoded_tr = tokenizer(list(train_X), padding='max_length', max_length=400, return_attention_mask=True)
+    encoded_tr = tokenizer(list(train_X), padding='max_length', max_length=602, return_attention_mask=True)
     train_encodings, train_attention_masks = encoded_tr['input_ids'], encoded_tr['attention_mask']
 
-    encoded_vl = tokenizer(list(val_X), padding='max_length', max_length=400, return_attention_mask=True)
+    encoded_vl = tokenizer(list(val_X), padding='max_length', max_length=602, return_attention_mask=True)
     val_encodings, val_attention_masks = encoded_vl['input_ids'], encoded_vl['attention_mask']
 
-    encoded_te = tokenizer(list(test_X), padding='max_length', max_length=400, return_attention_mask=True)
+    encoded_te = tokenizer(list(test_X), padding='max_length', max_length=602, return_attention_mask=True)
     test_encodings, test_attention_masks = encoded_te['input_ids'], encoded_te['attention_mask']
 
     train_dataset = IDPBERTDataset(input_ids=train_encodings, attention_masks=train_attention_masks, labels=train_y)

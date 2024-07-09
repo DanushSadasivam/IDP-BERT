@@ -11,6 +11,10 @@ Property Prediction for Intrinsically Disordered Proteins (IDPs) using Language 
 
 <br>
 
-## How to Use
-* Update the `config.py` file with the desired parameters
+## How to Run Inference
+* Update the `config.yaml` file with the desired parameters
 * Run `python main.py` to train the model
+* Place the inference dataset in a numpy array named `X` saved as `inference_data.npz` in the directory `./data/`.
+* Update file name of the trained model in the `run_name` field in `config.yaml`.
+* Run `python inference.py` to obtain predictions.
+* The predictions file can be found in `./data/inference_results/`.

@@ -37,7 +37,8 @@ def create_model(config, get_embeddings=False):
         hidden_size=config['network']['hidden_size'],
         num_hidden_layers=config['network']['hidden_layers'],
         num_attention_heads=config['network']['attn_heads'],
-        hidden_dropout_prob=config['network']['dropout']
+        hidden_dropout_prob=config['network']['dropout'],
+        max_position_embeddings=config['network']['max_position_embeddings']
     )
     model = IDPBERT(bert_config, config, get_embeddings).to(config['device'])
 

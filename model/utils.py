@@ -1,6 +1,7 @@
 import torch
 from tqdm import tqdm
 from sklearn.metrics import r2_score
+from transformers import BertTokenizerFast
 
 
 def train(model, dataloader, optimizer, criterion, device):
@@ -69,7 +70,30 @@ def test(model, dataloader, device):
         with torch.inference_mode():
             outputs = model(inputs, attention_mask).squeeze()
 
+        if outputs.dim()==0:
+            outputs = outputs.unsqueeze(0)
+        if labels.dim()==0:
+            labels = labels.unsqueeze(0)
+
         predictions.extend(outputs.detach().cpu().tolist())
         ground_truth.extend(labels.detach().cpu().tolist())
 
     return r2_score(ground_truth, predictions)
+
+def get_predctions(model, dataloader, device):
+    model.eval()
+    predictions = []
+
+    for batch in tqdm(dataloader):
+        inputs = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+
+        with torch.inference_mode():
+            outputs = model(inputs, attention_mask).squeeze()
+
+        if outputs.dim()==0:
+            outputs = outputs.unsqueeze(0)
+
+        predictions.extend(outputs.detach().cpu().tolist())
+
+    return predictions
