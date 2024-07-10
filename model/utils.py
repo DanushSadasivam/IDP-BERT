@@ -80,7 +80,7 @@ def test(model, dataloader, device):
 
     return r2_score(ground_truth, predictions)
 
-def get_predctions(model, dataloader, device):
+def get_predictions(model, dataloader, device):
     model.eval()
     predictions = []
 
