@@ -3,6 +3,10 @@ Property Prediction for Intrinsically Disordered Proteins (IDPs) using Language 
 
 <br>
 
+The trained model weights for the best performing models can be downloaded from this [HuggingFace repo](https://huggingface.co/dsadasiv/IDP-BERT).
+
+<br>
+
 ## Getting Started
 * Clone this repository
 * `cd IDP-BERT`
